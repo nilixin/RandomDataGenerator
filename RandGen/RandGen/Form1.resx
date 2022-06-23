@@ -62,8 +62,8 @@
 new line - creates new attributes ('ATTRIBUTE', 'ATTRIBUTE')
 | - separates value combinations
 ; - separates values
-/## - ONLY at the beginning of a line,\r\n
-  puts in double quotes ('TXT')
+/## - ONLY at the beginning of a line,
+  puts in double quotes ("TXT")
 /# - ONLY at the beginning of a line, puts in quotes ('TXT')
 /_ - ONCE per option, puts a space after option ('OPT1 OPT2')
 /__ - ONCE per option, puts a space before option ('OPT2 OPT1')</value>
