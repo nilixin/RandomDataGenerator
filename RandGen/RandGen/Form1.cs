@@ -113,19 +113,11 @@ namespace RandGen
             int initialLinesCount = lines.Count;
 
             for (int t = 0; t < 2; t++)                             // 0 two times
-            {
                 for (int i = 0; i < lines.Count - 1; i++)           // 1 for each line
-                {
                     for (int j = 0; j < lines.Count - 1; j++)       // 2 for each other line
-                    {
                         if (j != i)                                 // 3 if it is not the same one
-                        {
                             if (lines[i] == lines[j])               // 4 if these lines are similar
                                 lines.RemoveAt(j);                  // 5 then remove the latter
-                        }
-                    }
-                }
-            }
 
             int finalLinesCount = lines.Count;
             int countDifference = initialLinesCount - finalLinesCount;
