@@ -57,15 +57,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Note:
-new line - creates new
-   attributes ('ATTRIBUTE', 'ATTRIBUTE')
-| - separates value combinations
-; - separates values
-/## - ONLY at the beginning of a line, puts in double quotes ("TXT")
-/# - ONLY at the beginning of a line, puts in quotes ('TXT')
-/_ - ONCE per option, puts a space after option ('OPT1 OPT2')
-/__ - ONCE per option, puts a space before option ('OPT2 OPT1')</value>
-  </data>
 </root>

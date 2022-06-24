@@ -28,21 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tbBefore = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tbAfter = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tbInput = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.nudIterations = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.bGenerate = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.tbOutput = new System.Windows.Forms.TextBox();
             this.bFilter = new System.Windows.Forms.Button();
+            this.bReshuffle = new System.Windows.Forms.Button();
+            this.bHelp = new System.Windows.Forms.Button();
+            this.nudAttributes = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.nudIterations)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAttributes)).BeginInit();
             this.SuspendLayout();
             // 
             // tbBefore
@@ -105,16 +107,6 @@
             this.tbInput.Text = "/##/_A;B;C;D;E;F;G;H;I;J;K;L;M;N;O;P;Q;R;S;T;U;V;W;X;Y;Z|0;1;2;3;4;5;6;7;8;9\r\n/#A" +
     ";B;C;D;E;F;G;H;I;J;K;L;M;N;O;P;Q;R;S;T;U;V;W;X;Y;Z|0;1;2;3;4;5;6;7;8;9";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(12, 581);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(456, 180);
-            this.label4.TabIndex = 6;
-            this.label4.Text = resources.GetString("label4.Text");
-            // 
             // nudIterations
             // 
             this.nudIterations.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -125,7 +117,7 @@
             0,
             0});
             this.nudIterations.Name = "nudIterations";
-            this.nudIterations.Size = new System.Drawing.Size(150, 34);
+            this.nudIterations.Size = new System.Drawing.Size(343, 34);
             this.nudIterations.TabIndex = 7;
             this.nudIterations.Value = new decimal(new int[] {
             50,
@@ -146,7 +138,7 @@
             // bGenerate
             // 
             this.bGenerate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.bGenerate.Location = new System.Drawing.Point(361, 530);
+            this.bGenerate.Location = new System.Drawing.Point(361, 536);
             this.bGenerate.Name = "bGenerate";
             this.bGenerate.Size = new System.Drawing.Size(180, 48);
             this.bGenerate.TabIndex = 9;
@@ -174,32 +166,64 @@
             this.tbOutput.Multiline = true;
             this.tbOutput.Name = "tbOutput";
             this.tbOutput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbOutput.Size = new System.Drawing.Size(614, 721);
+            this.tbOutput.Size = new System.Drawing.Size(614, 654);
             this.tbOutput.TabIndex = 10;
             // 
             // bFilter
             // 
             this.bFilter.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.bFilter.Location = new System.Drawing.Point(361, 584);
+            this.bFilter.Location = new System.Drawing.Point(361, 590);
             this.bFilter.Name = "bFilter";
-            this.bFilter.Size = new System.Drawing.Size(180, 36);
+            this.bFilter.Size = new System.Drawing.Size(180, 48);
             this.bFilter.TabIndex = 12;
             this.bFilter.Text = "Filter same";
             this.bFilter.UseVisualStyleBackColor = true;
             this.bFilter.Click += new System.EventHandler(this.bFilter_Click);
             // 
+            // bReshuffle
+            // 
+            this.bReshuffle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bReshuffle.Location = new System.Drawing.Point(361, 659);
+            this.bReshuffle.Name = "bReshuffle";
+            this.bReshuffle.Size = new System.Drawing.Size(180, 36);
+            this.bReshuffle.TabIndex = 13;
+            this.bReshuffle.Text = "Reshuffle";
+            this.bReshuffle.UseVisualStyleBackColor = true;
+            this.bReshuffle.Click += new System.EventHandler(this.bReshuffle_Click);
+            // 
+            // bHelp
+            // 
+            this.bHelp.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bHelp.Location = new System.Drawing.Point(12, 659);
+            this.bHelp.Name = "bHelp";
+            this.bHelp.Size = new System.Drawing.Size(180, 36);
+            this.bHelp.TabIndex = 14;
+            this.bHelp.Text = "Help";
+            this.bHelp.UseVisualStyleBackColor = true;
+            this.bHelp.Click += new System.EventHandler(this.bHelp_Click);
+            // 
+            // nudAttributes
+            // 
+            this.nudAttributes.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.nudAttributes.Location = new System.Drawing.Point(12, 598);
+            this.nudAttributes.Name = "nudAttributes";
+            this.nudAttributes.Size = new System.Drawing.Size(343, 34);
+            this.nudAttributes.TabIndex = 15;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1173, 773);
+            this.ClientSize = new System.Drawing.Size(1173, 706);
+            this.Controls.Add(this.nudAttributes);
+            this.Controls.Add(this.bHelp);
+            this.Controls.Add(this.bReshuffle);
             this.Controls.Add(this.bFilter);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.tbOutput);
             this.Controls.Add(this.bGenerate);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.nudIterations);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tbInput);
             this.Controls.Add(this.label2);
@@ -209,6 +233,7 @@
             this.Name = "Form1";
             this.Text = "RandGen";
             ((System.ComponentModel.ISupportInitialize)(this.nudIterations)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAttributes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,12 +247,14 @@
         private TextBox tbAfter;
         private Label label3;
         private TextBox tbInput;
-        private Label label4;
         private NumericUpDown nudIterations;
         private Label label5;
         private Button bGenerate;
         private Label label6;
         private TextBox tbOutput;
         private Button bFilter;
+        private Button bReshuffle;
+        private Button bHelp;
+        private NumericUpDown nudAttributes;
     }
 }
