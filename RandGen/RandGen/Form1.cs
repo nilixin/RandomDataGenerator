@@ -104,5 +104,40 @@ namespace RandGen
             
             return query;
         }
+
+        private void bFilter_Click(object sender, EventArgs e)
+        {
+            string output = tbOutput.Text;
+
+            List<string> lines = output.Split("\r\n").ToList();
+            int initialLinesCount = lines.Count;
+
+            for (int t = 0; t < 2; t++)                             // 0 two times
+            {
+                for (int i = 0; i < lines.Count - 1; i++)           // 1 for each line
+                {
+                    for (int j = 0; j < lines.Count - 1; j++)       // 2 for each other line
+                    {
+                        if (j != i)                                 // 3 if it is not the same one
+                        {
+                            if (lines[i] == lines[j])               // 4 if these lines are similar
+                                lines.RemoveAt(j);                  // 5 then remove the latter
+                        }
+                    }
+                }
+            }
+
+            int finalLinesCount = lines.Count;
+            int countDifference = initialLinesCount - finalLinesCount;
+
+            string filteredOutput = string.Join("\r\n", lines);
+
+            if (MessageBox.Show($"Are you sure to remove {countDifference} lines?\n\n" +
+                $"Lines initially: {initialLinesCount}\n" +
+                $"Lines finally: {finalLinesCount}", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            {
+                tbOutput.Text = filteredOutput;
+            }
+        }
     }
 }

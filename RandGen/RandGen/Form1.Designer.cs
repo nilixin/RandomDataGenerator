@@ -41,6 +41,7 @@
             this.bGenerate = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.tbOutput = new System.Windows.Forms.TextBox();
+            this.bFilter = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudIterations)).BeginInit();
             this.SuspendLayout();
             // 
@@ -110,7 +111,7 @@
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.Location = new System.Drawing.Point(12, 581);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(433, 180);
+            this.label4.Size = new System.Drawing.Size(456, 180);
             this.label4.TabIndex = 6;
             this.label4.Text = resources.GetString("label4.Text");
             // 
@@ -176,11 +177,23 @@
             this.tbOutput.Size = new System.Drawing.Size(614, 721);
             this.tbOutput.TabIndex = 10;
             // 
+            // bFilter
+            // 
+            this.bFilter.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bFilter.Location = new System.Drawing.Point(361, 584);
+            this.bFilter.Name = "bFilter";
+            this.bFilter.Size = new System.Drawing.Size(180, 36);
+            this.bFilter.TabIndex = 12;
+            this.bFilter.Text = "Filter same";
+            this.bFilter.UseVisualStyleBackColor = true;
+            this.bFilter.Click += new System.EventHandler(this.bFilter_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1173, 773);
+            this.Controls.Add(this.bFilter);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.tbOutput);
             this.Controls.Add(this.bGenerate);
@@ -215,5 +228,6 @@
         private Button bGenerate;
         private Label label6;
         private TextBox tbOutput;
+        private Button bFilter;
     }
 }
