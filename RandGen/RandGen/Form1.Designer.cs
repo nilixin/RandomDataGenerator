@@ -163,6 +163,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbOutput.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbOutput.Location = new System.Drawing.Point(547, 40);
+            this.tbOutput.MaxLength = 100000000;
             this.tbOutput.Multiline = true;
             this.tbOutput.Name = "tbOutput";
             this.tbOutput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;

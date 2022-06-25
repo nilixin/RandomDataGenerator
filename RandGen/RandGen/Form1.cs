@@ -4,7 +4,6 @@ namespace RandGen
 {
     public partial class Form1 : Form
     {
-        Random random = new Random();
 
         public Form1()
         {
@@ -20,9 +19,16 @@ namespace RandGen
 
             try
             {
+                int linesGenerated = 0;
                 for (int i = 0; i < nudIterations.Value; i++)
                 {
                     Fill(input, query, after);
+                    linesGenerated = i;
+                }
+
+                if (linesGenerated > 1000)
+                {
+                    MessageBox.Show($"Generating done. Generated {linesGenerated}");
                 }
             }
             catch (Exception ex)
@@ -50,6 +56,8 @@ namespace RandGen
             initialLines.RemoveAt(initialLines.Count - 1);
 
             List<string> reshuffledLines = new List<string>();
+
+            Random random = new Random();
 
             for (int i = 0; i < 10; i++)
             {
@@ -79,6 +87,7 @@ namespace RandGen
                 "; -separates values\n" +
                 "/## - ONLY at the beginning of a line, puts in double quotes (\"TXT\")\n" +
                 "/# - ONLY at the beginning of a line, puts in quotes ('TXT')\n" +
+                "/* - ONLY at the beginning of a line, only separates with a comma, useful for numbers (00, 00, 00)\n" +
                 "/ _ - ONCE per option, puts a space after option('OPT1 OPT2')\n" +
                 "/ __ - ONCE per option, puts a space before option('OPT2 OPT1')\n\n" +
                 "Filtering by 0 means filtering by the entire line.\n" +
@@ -104,6 +113,13 @@ namespace RandGen
                 {
                     atts[j] = atts[j].Replace("/#", "");
                     query = NewAttribute(query, "'", atts[j]);
+                    if (j != atts.Count - 1)
+                        query += ",";
+                }
+                else if (atts[j].Contains("/*")) // if "*" at the beginning of a line
+                {
+                    atts[j] = atts[j].Replace("/*", "");
+                    query = NewAttribute(query, "", atts[j]);
                     if (j != atts.Count - 1)
                         query += ",";
                 }
@@ -156,6 +172,8 @@ namespace RandGen
 
         private string NewOption(string query, string option, int count)
         {
+            Random random = new Random();
+
             List<string> vals = option.Split(';').ToList();
             int index = random.Next(0, vals.Count);
             string val = vals[index];
